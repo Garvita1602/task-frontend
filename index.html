@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Responsive Website</title>
+    <style>
+        @media (max-width: 480px) {
+            .content-section,
+            .history {
+                text-align: center;
+                margin: 0 auto;
+                padding: 5px 6px;
+            }
+            .content-section p,
+            .history p {
+                margin: 0 auto;
+                max-width: 95%;
+                font-size: 12px;
+                line-height: 1.3;
+            }
+            .content-section h2,
+            .history h2 {
+                margin: 5px auto;
+                font-size: 15px;
+            }
+            .navbar {
+                text-align: center;
+            }
+            .navbar ul {
+                flex-direction: row;
+                gap: 5px;
+            }
+            .navbar li {
+                display: inline-block;
+            }
+            .navbar a {
+                font-size: 4px;
+                padding: 1px 1px;
+            }
+            .hero img {
+                height: 10vh;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .content-section,
+            .history {
+                text-align: center;
+                margin: 0 auto;
+                padding: 5px 15px;
+            }
+            .content-section p,
+            .history p {
+                margin: 0 auto;
+                max-width: 90%;
+                font-size: 14px;
+                line-height: 1.4;
+            }
+            .content-section h2,
+            .history h2 {
+                margin: 8px auto;
+                font-size: 20px;
+            }
+            .navbar {
+                text-align: center;
+            }
+            .navbar ul {
+                flex-direction: row;
+                gap: 5px;
+            }
+            .navbar li {
+                display: inline-block;
+            }
+            .navbar a {
+                font-size: 12px;
+                padding: 2px 6px;
+            }
+            .hero img {
+                height: 30vh;
+            }
+            .hero {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            max-width: 1280px;
+            padding: 0 2%;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #080808;
+        }
+        
+        .logo {
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .logo img {
+            max-width: 10%;
+            height: auto;
+            display: inline-block;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .header {
+            text-align: center;
+            background-color: #fff;
+        }
+        
+        .navbar {
+            text-align: center;
+            background-color: white;
+            border-top: 2px solid #080808;
+            border-bottom: 2px solid #080808;
+            padding: 10px 0;
+        }
+        
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .navbar li {
+            display: inline;
+        }
+        
+        .navbar li img {
+            width: 15px;
+            height: 15px;
+        }
+        
+        .navbar a {
+            text-decoration: none;
+            color: #080808;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s ease-in-out;
+        }
+        
+        .navbar a:hover {
+            color: #007bff;
+        }
+        
+        .navbar ul li a {
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .navbar ul li a:hover {
+            color: #ff6600;
+        }
+        
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        
+        .hero img {
+            width: 50%;
+            height: 90%;
+            object-fit: cover;
+            margin-bottom: 0px;
+        }
+        
+        .content-section {
+            margin-top: 5px;
+            padding: 0 10px;
+            text-align: center;
+        }
+        
+        .content-section h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            font-weight: 700;
+        }
+        
+        .content-section p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: justify;
+            font-weight: 400;
+        }
+        
+        .contact-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: white;
+        }
+        
+        .contact-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .contact-section p {
+            font-size: 16px;
+            color: #080808;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-section form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-section input,
+        .contact-section textarea {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .contact-section textarea {
+            resize: none;
+        }
+        
+        .contact-section button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-section button:hover {
+            background-color: #0056b3;
+        }
+        
+        .showcase {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .showcase img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .history {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .history h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .history p {
+            font-size: 18px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .read-more {
+            margin-top: 20px;
+            display: inline-block;
+            font-size: 16px;
+            color: #ff6600;
+            border: 1px solid #ff6600;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .read-more:hover {
+            background-color: #ff6600;
+            color: #fff;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2%;
+            background-color: white;
+        }
+        
+        footer p {
+            font-size: 14px;
+            color: #080808
+        }
+        
+        footer img {
+            width: 20px;
+            height: auto;
+            margin-top: 5px;
+        }
+        
+        .history {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: white;
+        }
+        
+        .history h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .history p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="/images/dummy-logo.png" alt="Dummy Logo">
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><img src="/images/nav-button-icon.png" alt="Nav-button"></li>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#history">HISTORY</a></li>
+                <li><a href="#contact">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <img src="/images/slider-1.jpg" alt="Hero Image">
+    </section>
+
+    <section id="about" class="content-section">
+        <h2>Welcome to Dummy!</h2>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+            sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <a href="#" class="read-more">Read More...</a>
+    </section>
+
+    <section id="gallery" class="showcase">
+        <h2>Image Showcase</h2>
+        <img src="/images/1.jpg" alt="Showcase Image">
+        <img src="/images/2.jpg" alt="Showcase Image">
+        <img src="/images/3.jpg" alt="Showcase Image">
+    </section>
+
+    <section id="history" class="history">
+        <h2>History</h2>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+            sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Fill out the form below to get in touch.</p>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>2024. All Rights Reserved by Garvita Jhanwar.</p>
+            <img src="/images/copyright.png" alt="Copyright">
+        </div>
+    </footer>
+</body>
+
+</html>
